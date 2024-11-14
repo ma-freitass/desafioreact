@@ -1,9 +1,11 @@
 import {Link} from "react-router-dom";
+import { HeaderStyle } from "./style";
+
 
 export default function Header() {
   return(
-    <header>
-      <img src="" alt="logomarca" />
+    <HeaderStyle>
+      <img src="src/assets/images/logo.png" alt="Logomarca" />
       <nav>
         <li>
           <Link to="/">Home</Link>
@@ -15,6 +17,6 @@ export default function Header() {
         <Link to="/sobre">Sobre</Link>
         </li>
       </nav>
-    </header>
+    </HeaderStyle>
   )
 }
