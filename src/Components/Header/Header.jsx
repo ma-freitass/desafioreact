@@ -1,21 +1,23 @@
-import {Link} from "react-router-dom";
-import { HeaderStyle } from "./style";
+import { Link } from "react-router-dom";
+import { HeaderStyle, StyleLink, Ul } from "./style";
 
 
 export default function Header() {
-  return(
+  return (
     <HeaderStyle>
       <img src="src/assets/images/logo.png" alt="Logomarca" />
       <nav>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-        <Link to="/novidades">Novidades</Link>
-        </li>
-        <li>
-        <Link to="/sobre">Sobre</Link>
-        </li>
+        <Ul>
+          <li>
+            <StyleLink to="/">Home</StyleLink>
+          </li>
+          <li>
+            <StyleLink to="/novidades">Novidades</StyleLink>
+          </li>
+          <li>
+            <StyleLink to="/sobre">Sobre</StyleLink>
+          </li>
+        </Ul>
       </nav>
     </HeaderStyle>
   )
