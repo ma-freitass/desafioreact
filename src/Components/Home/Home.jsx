@@ -4,37 +4,70 @@ import { useState, useEffect } from "react";
 
 export default function Home() 
 {
-  const estadoInicial = [
+  const estadoInicialImagens = [
     "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/laranja4.png?raw=true",
     "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/vermelho2.png?raw=true",
     "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amarelo2.png?raw=true",
   ];
 
-  const [imagens, setImagens] = useState(estadoInicial);
+  const [imagens, setImagens] = useState(estadoInicialImagens);
 
-  // URLs alternativas para troca
   const imagensAlternativas = [
     "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/laranjaclique.png?raw=true",
     "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/vermelhoclick.png?raw=true",
     "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amareloclique.png?raw=true"
     
   ];
-  const tempoDeRestauracao = 1000;
-  // Função para trocar a imagem clicada
+  const estadoInicialCores = {
+    copo: "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amarelo2x%201.png?raw=true", 
+    elipse: "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/Ellipse1.png?raw=true", 
+  };
+
+  const [cores, setCores] = useState(estadoInicialCores);
+
+
+  const coposCores = [
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/laranja2x%201.png?raw=true", 
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/vermelho2x%201.png?raw=true", 
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amarelo2x%201.png?raw=true", 
+  ];
+  const elipsesCores = [
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/Ellipse1.png?raw=true", 
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/Ellipse3.png?raw=true", 
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/Ellipse2.png?raw=true", 
+  ];
+  const tempoDeRestauracao = 1000; 
+
+  const [clicado, setClicado] = useState([false, false, false]);
+
+ 
   const trocarImagem = (indice) => {
+
+    if (clicado[indice]) return;
+    const novoClicado = [...clicado];
+    novoClicado[indice] = true;
+    setClicado(novoClicado);
     setImagens((prevImagens) =>
       prevImagens.map((imagem, i) =>
         i === indice ? imagensAlternativas[i] : imagem
       )
     );
+
+    setCores( {
+      copo: coposCores[indice],
+        elipse: elipsesCores[indice],
+      });
+    
   };
+
+  
   useEffect(() => {
     const timer = setTimeout(() => {
-      setImagens(estadoInicial);
+      setImagens([estadoInicialImagens[0], estadoInicialImagens[1], estadoInicialImagens[2]]);
     }, tempoDeRestauracao);
 
-    return () => clearTimeout(timer); // Limpa o timer ao desmontar o componente ou antes de reiniciar
-  }, [imagens]);
+    return () => clearTimeout(timer); 
+  }, []); 
 
   return(
   <MainStyle>
@@ -51,15 +84,14 @@ export default function Home()
           key={index}
           src={src}
           alt={`Imagem ${index + 1}`}
-          onClick={() => trocarImagem(index)} // Chama a função ao clicar
-          style={{ cursor: "pointer" }} // Adiciona um cursor de "mãozinha"
+          onClick={() => trocarImagem(index)}
         />
       ))}
       </Div>
     </section>
     <Section>
-      <Copo src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amarelo2x%201.png?raw=true" alt="" />
-      <Elipse src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/Ellipse1.png?raw=true" alt="" />
+    <Copo src={cores.copo} alt="Copo de café" />
+    <Elipse src={cores.elipse} alt="Elipse de fundo" />
     </Section>
   </MainStyle>
   )

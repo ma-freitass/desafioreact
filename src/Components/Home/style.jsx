@@ -96,4 +96,7 @@ export const Div = styled.div`
     justify-content: center;
     align-items: center;
     justify-content: space-around;
+    img{
+        cursor: pointer;
+    }
 `
