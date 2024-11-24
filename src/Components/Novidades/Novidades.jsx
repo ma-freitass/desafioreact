@@ -1,4 +1,4 @@
-import {Botao, Subtiulo, Section, Div, DivisaoImage, Titulo} from "./style";
+import {Botao, Subtiulo, Section, Div, DivisaoImage, Titulo, Texto} from "./style";
 
 export default function Novidades() 
 {
@@ -7,8 +7,10 @@ export default function Novidades()
     <Div>
     <Subtiulo>PREPARAÇÃO</Subtiulo>
     <Titulo>Níveis de torra</Titulo>
-    <p>Qual a torra que prefere? Starbucks® Torra Clara, Torra Média ou Torra Escura? Estas sãos as torras que fazem parte dos níveis de torra Starbucks®</p>
+    <Texto>Qual a torra que prefere? Starbucks® Torra Clara, Torra Média ou Torra Escura? Estas sãos as torras que fazem parte dos níveis de torra Starbucks®</Texto>
+    <a href="https://www.starbucks.com.br/" target="_blank">
     <Botao>SAIBA MAIS</Botao>
+    </a>
     </Div>
     <DivisaoImage>
     <img src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/Novidades.png?raw=true" alt="Imagem novidades" />

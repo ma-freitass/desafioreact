@@ -8,6 +8,7 @@ export const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   font-family: "Poppins", serif;
+  height: 100px;
 `
 
 export const StyleLink = styled(Link)`

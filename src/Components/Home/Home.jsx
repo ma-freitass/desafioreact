@@ -1,14 +1,18 @@
 import {MainStyle, Copo, Section, Elipse, Titulo, Subtitulo, Span, Texto, Botao, Div} from "./style"
 
+
 export default function Home() 
 {
+ 
   return(
   <MainStyle>
     <section>
       <Titulo>Mais que Café</Titulo>
       <Subtitulo>Isso é <Span>Starbucks</Span></Subtitulo>
       <Texto>A Starbucks oferece uma variedade de cafés de alta qualidade. Alguns dos cafés mais populares incluem o Caffè Americano, o Cappuccino, o Latte Macchiato e o Espresso. Além disso, a Starbucks oferece bebidas quentes e frias, doces diferenciados e sanduíches.</Texto>
-      <Botao>SAIBA MAIS</Botao>
+      <a href="https://www.starbucks.com.br/" target="_blank">
+    <Botao>SAIBA MAIS</Botao>
+    </a>
       <Div>
         <img src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/laranja4.png?raw=true" alt="Copo de café amarelo" />
         <img src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/vermelho2.png?raw=true" alt="Copo de café vermelho" />

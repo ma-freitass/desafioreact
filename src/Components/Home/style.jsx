@@ -1,24 +1,14 @@
 import styled from "styled-components";
 
 export const MainStyle = styled.main`
-
     display: flex;
     align-items: center;
-    jusify-content: center;
-    width: 100vw;
-    min-height: 50vh;
-    
+    justify-content: center;
+    width: 100%;
+    height: auto;
     margin-left: 116px;
     box-sizing: border-box;
-    overflow: hidden;
     font-family: "Poppins", serif;
-
-    @media (max-width: 540px) {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
 
 `
 export const Section = styled.section`
@@ -26,13 +16,6 @@ export const Section = styled.section`
     max-width: 90vw;
     height: auto;
     margin-top: 100px;
-
-    @media (max-width: 540px) {
-        max-width: 90%;
-        height: auto;
-        margin-top: 50px;
-        text-align: center;
-    }
 
 `
 export const Copo = styled.img`
@@ -44,20 +27,17 @@ export const Copo = styled.img`
     padding: 0; 
     margin: 0; 
 
-    @media (max-width: 450px) {
-        width: 50vw;
-    }
-
 `
 export const Elipse = styled.img`
+
   position: relative;
   width: 30vw; 
+  height: 75vh;
+  object-fit: fill;
+  margin-top: 200px;
   z-index: -1; 
-  margin: 0 auto;
+  
 
-  @media (max-width: 450px) {
-    width: 60vw;
-  }
 `
 export const Titulo = styled.h2`
     
@@ -97,6 +77,15 @@ export const Botao = styled.button`
     font-weight: 700px;
     font-size: 24px;
     border-style: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #00874c;
+    }
+    &:active {
+        background-color: #004d30;
+    }
 `
 export const Div = styled.div`
     margin-top: 94px;

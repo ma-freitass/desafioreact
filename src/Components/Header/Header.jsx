@@ -5,7 +5,9 @@ import logo from "../../assets/images/logo.png";
 export default function Header() {
   return (
     <HeaderStyle>
-      <img src={logo} alt="Logomarca" />
+      <StyleLink to="/">
+        <img src={logo} alt="Logomarca" />
+      </StyleLink>
       <nav>
         <Ul>
           <li>

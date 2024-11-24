@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 
 export const Section = styled.section`
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 80vh;
+  height: 100vh;
   background-color: #1e3932;
 
 `
@@ -26,20 +26,22 @@ export const Botao = styled.button`
     font-weight: 700px;
     font-size: 24px;
     border-style: none;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 
- &:hover {
- background-color: #00874c;
- }
-&:active {
-  background-color: #004d30;
-}
+    &:hover {
+      background-color: #00874c;
+    }
+    &:active {
+      background-color: #004d30;
+    }
 `
 export const Subtiulo = styled.h3`
     font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 20px;
     color: #ffffff;
+    margin-bottom: 0;
 `
 export const DivisaoImage = styled.div`
     width: 40%; 
@@ -54,8 +56,17 @@ export const DivisaoImage = styled.div`
   }
 `
 export const Titulo = styled.h2`
-    font-family: "Poppins", sans-serif;
-    font-weight: 400px;
-    font-size: 64px;
 
+    margin-top: 0;
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+      font-size: 44px;
+      color: #ffffff;
+
+`
+export const Texto = styled.p`
+  font-family: "Poppins", sans-serif;
+  font-weight: 400px;
+  font-size: 24px;
+  color: #ffffff;
 `
