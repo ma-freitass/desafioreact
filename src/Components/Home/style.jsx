@@ -81,10 +81,11 @@ export const Botao = styled.button`
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: #00874c;
+        background-color: #037143;
     }
     &:active {
-        background-color: #004d30;
+        background-color: #075534;
+        ;
     }
 `
 export const Div = styled.div`

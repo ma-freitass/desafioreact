@@ -1,9 +1,41 @@
-import {MainStyle, Copo, Section, Elipse, Titulo, Subtitulo, Span, Texto, Botao, Div} from "./style"
+import {MainStyle, Copo, Section, Elipse, Titulo, Subtitulo, Span, Texto, Botao, Div} from "./style";
+import { useState, useEffect } from "react";
 
 
 export default function Home() 
 {
- 
+  const estadoInicial = [
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/laranja4.png?raw=true",
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/vermelho2.png?raw=true",
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amarelo2.png?raw=true",
+  ];
+
+  const [imagens, setImagens] = useState(estadoInicial);
+
+  // URLs alternativas para troca
+  const imagensAlternativas = [
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/laranjaclique.png?raw=true",
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/vermelhoclick.png?raw=true",
+    "https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amareloclique.png?raw=true"
+    
+  ];
+  const tempoDeRestauracao = 1000;
+  // Função para trocar a imagem clicada
+  const trocarImagem = (indice) => {
+    setImagens((prevImagens) =>
+      prevImagens.map((imagem, i) =>
+        i === indice ? imagensAlternativas[i] : imagem
+      )
+    );
+  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setImagens(estadoInicial);
+    }, tempoDeRestauracao);
+
+    return () => clearTimeout(timer); // Limpa o timer ao desmontar o componente ou antes de reiniciar
+  }, [imagens]);
+
   return(
   <MainStyle>
     <section>
@@ -14,9 +46,15 @@ export default function Home()
     <Botao>SAIBA MAIS</Botao>
     </a>
       <Div>
-        <img src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/laranja4.png?raw=true" alt="Copo de café amarelo" />
-        <img src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/vermelho2.png?raw=true" alt="Copo de café vermelho" />
-        <img src="https://github.com/ma-freitass/desafioreact/blob/main/src/assets/images/amarelo2.png?raw=true" alt="Copo de café laranja" />
+      {imagens.map((src, index) => (
+        <img
+          key={index}
+          src={src}
+          alt={`Imagem ${index + 1}`}
+          onClick={() => trocarImagem(index)} // Chama a função ao clicar
+          style={{ cursor: "pointer" }} // Adiciona um cursor de "mãozinha"
+        />
+      ))}
       </Div>
     </section>
     <Section>
