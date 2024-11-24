@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 
 export const HeaderStyle = styled.header`
   display: flex;
+  margin-left: 99px;
+  margin-top: 52px;
   justify-content: space-between;
   align-items: center;
   font-family: "Poppins", serif;
