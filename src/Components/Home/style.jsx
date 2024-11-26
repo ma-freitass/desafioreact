@@ -26,6 +26,7 @@ export const Copo = styled.img`
     transform: translate(-50%, -50%); 
     padding: 0; 
     margin: 0; 
+    
 
 `
 export const Elipse = styled.img`
